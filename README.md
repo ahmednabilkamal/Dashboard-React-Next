@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Dashboard App
+This project is a small dashboard application built with Next.js, TypeScript, and Tailwind CSS.
 
-## Getting Started
+Features:
 
-First, run the development server:
+Item List: Displays a paginated list of items.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Search & Filter: Search items by title and filter by status.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Item Details: Clicking an item opens a side panel with more details.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Add Item: A form to create new items.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Tech Stack
+Frontend: Next.js, React, TypeScript
 
-## Learn More
+Styling: Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+State Management: Zustand (for UI state like selected item), React Query (for server state and data fetching/caching)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+API: In-memory mock API endpoint (/api/items)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Setup and Run
+Clone the repository.
 
-## Deploy on Vercel
+Navigate to the project directory.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Install dependencies: npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the development server: npm run dev
+
+Open your browser and visit http://localhost:3000.
+
+Assumptions
+The API is a simple in-memory mock. All data is lost on server restart.
+
+No persistent database is used.
+
+For pagination, filtering, and searching, we are handling the logic on the client side since the dataset is small.
+
+No authentication or authorization is implemented.
+
+What I'd Improve with More Time
+Backend Integration: Replace the mock API with a real database and a proper API layer. This would allow for server-side pagination, searching, and filtering, which is more scalable for larger datasets.
+
+Robust State Management: Add more sophisticated state management for forms (e.g., using React Hook Form or Zod for validation).
+
+Accessibility: Conduct a thorough accessibility audit and ensure all components meet WCAG standards.
+
+Testing: Add unit tests (e.g., with Jest/React Testing Library) for key components and integration tests for the main application flow.
+
+UI/UX Polish: Refine the design, add more animations (beyond the details panel), and ensure all components are fully responsive across all screen sizes.
+
+Performance Optimization: Use memoization (e.g., React.memo) for components that don't need to re-render, and lazy-load components to improve initial page load times.
