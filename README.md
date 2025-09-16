@@ -29,7 +29,7 @@ Install dependencies: npm install
 
 Run the development server: npm run dev
 
-Open your browser and visit http://localhost:3000.
+Open your browser and visit Network link.
 
 Assumptions
 The API is a simple in-memory mock. All data is lost on server restart.
